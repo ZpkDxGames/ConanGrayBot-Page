@@ -1,0 +1,3 @@
+"use client";
+import { useState } from "react";
+export function CommandList({commands}:{commands:{key:string;name:string;description:string;enabled:boolean;registered?:boolean}[]}){const [search,setSearch]=useState("");return <section className="card"><label>Search commands<input type="search" value={search} onChange={e=>setSearch(e.target.value)}/></label><ul className="records">{commands.filter(c=>(c.name+" "+c.description).toLowerCase().includes(search.toLowerCase())).map(c=><li key={c.key}><strong>/{c.name}</strong><span className="badge">{c.enabled?"Enabled":"Disabled"} · {c.registered?"Registered":"Not synced"}</span><p>{c.description}</p></li>)}</ul></section>;}

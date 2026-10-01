@@ -1,6 +1,8 @@
 # ConanGrayBot v2 execution recovery checkpoint
 
-**Status: blocked before implementation upload. This branch is not a deployable v2 release.**
+**Status: reconstructed source checkpoint. This branch is not a deployable v2 release.**
+
+The restored runtime was an empty replacement workspace. New source and current validation are tracked in WORK_PROGRESS.md. Historical results below describe the lost implementation and do not certify current source.
 
 The execution service disconnected immediately before the tested local implementation could be uploaded. It reports `409 environment_offline: Environment is not connected`. GitHub remains available. No stable tags or Releases have been created; GitHub CI has not validated the local implementation.
 
