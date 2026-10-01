@@ -65,7 +65,7 @@ describe("request boundaries",()=>{
   it.each([
     ["config","GET","/api/v1/config/123"],["config","PUT","/api/v1/config/123"],["media","GET","/api/v1/media/123"],["logs","GET","/api/v1/logs/123"],
     ["diagnostics","GET","/api/v1/diagnostics"],["compatibility","GET","/api/v1/compatibility"],["status","GET","/api/v1/admin/123/status"],["channels","GET","/api/v1/discord/123/channels"],["commands","GET","/api/v1/discord/123/commands"],
-    ["sync-commands","POST","/api/v1/discord/123/sync-commands"],["test-drive","POST","/api/v1/media/123/test-drive"],["memory/clear","POST","/api/v1/admin/123/memory/clear"],["bot/restart","POST","/api/v1/admin/123/bot/restart"],["ai/pause","POST","/api/v1/admin/123/ai/pause"],["media/record_1","DELETE","/api/v1/media/123/record_1"],
+    ["sync-commands","POST","/api/v1/discord/123/sync-commands"],["test-reply","POST","/api/v1/ai/123/test-reply"],["test-drive","POST","/api/v1/media/123/test-drive"],["memory/clear","POST","/api/v1/admin/123/memory/clear"],["bot/restart","POST","/api/v1/admin/123/bot/restart"],["ai/pause","POST","/api/v1/admin/123/ai/pause"],["media/record_1","DELETE","/api/v1/media/123/record_1"],
   ])("allows only declared operation %s %s",(operation,method,path)=>expect(operationPath(operation.split("/"),"123",method)).toBe(path));
   it.each(["../config","https://evil.test","media/../../../credentials","bot/arbitrary"])("rejects arbitrary paths %s",operation=>expect(operationPath(operation.split("/"),"123","POST")).toBeNull());
 });

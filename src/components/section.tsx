@@ -7,9 +7,11 @@ import type { JsonValue } from "@/lib/forms";
 import { ConfigEditor } from "./config-editor";
 import { Actions } from "./actions";
 import { Records } from "./records";
+import { ProviderTest } from "./provider-test";
+import type { components } from "@/lib/generated";
 import { CommandList } from "./command-list";
 
-type Diagnostics = {version:string;botReady:boolean;commandSync:string;store:string;providers:Record<string,boolean>;weatherConfigured:boolean;driveConfigured:boolean};
+type Diagnostics = components["schemas"]["Diagnostics"];
 async function load<T>(actor: string, path: string): Promise<T | null> {
   try { return await coreData<T>(actor, path); } catch { return null; }
 }
@@ -38,8 +40,8 @@ export async function Section({ slug, actor }: { slug: string; actor: string }) 
     { label: "Resume AI", operation: "ai/resume" },
   ]} />;
   if (slug === "media" || slug === "logs") {
-    const data = await load<{ items?: React.ComponentProps<typeof Records>["initial"]; logs?: React.ComponentProps<typeof Records>["initial"] }>(actor, `/api/v1/${slug}/${guild}?limit=50`);
-    return data ? <Records kind={slug} initial={data.items || data.logs || []} /> : <Unavailable />;
+    const data = await load<{ items?: React.ComponentProps<typeof Records>["initial"]; logs?: React.ComponentProps<typeof Records>["initial"]; nextCursor?: string|null }>(actor, `/api/v1/${slug}/${guild}?limit=50`);
+    return data ? <Records kind={slug} initial={data.items || data.logs || []} initialCursor={data.nextCursor} /> : <Unavailable />;
   }
   const spec = panel(slug);
   if (!spec) return null;
@@ -50,6 +52,7 @@ export async function Section({ slug, actor }: { slug: string; actor: string }) 
     {slug === "commands" && <>{commands ? <CommandList commands={commands.commands} /> : <Unavailable />}<Actions items={[{ label: "Publish command changes", operation: "sync-commands" }]} /></>}
     {slug === "media/drive" && <Actions items={[{ label: "Test Drive folder", operation: "test-drive" }]} />}
     {slug === "ai/memory" && <Actions items={[{ label: "Clear all conversation memory", operation: "memory/clear", body: { allChannels: true } }]} />}
+    {slug === "ai/providers" && <ProviderTest />}
     <ConfigEditor initial={config} section={spec.section} keys={spec.keys} defaults={defaults as JsonValue} />
   </>;
 }

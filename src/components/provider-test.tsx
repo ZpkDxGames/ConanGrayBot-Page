@@ -1,0 +1,5 @@
+"use client";
+import { useState } from "react";
+import { api } from "@/lib/api";
+import type { components } from "@/lib/generated";
+export function ProviderTest(){const [prompt,setPrompt]=useState(""),[result,setResult]=useState(""),[busy,setBusy]=useState(false);async function submit(){setBusy(true);try{const reply=await api<components["schemas"]["SandboxResult"]>("test-reply",{method:"POST",body:JSON.stringify({prompt})});setResult(`${reply.answer}\n\n${reply.provider} · ${reply.latencyMs} ms`);}catch(error){setResult(error instanceof Error?error.message:"Provider test failed");}finally{setBusy(false);}}return <section className="card"><h2>Test saved provider settings</h2><p>Uses the saved persona with no conversation memory.</p><label htmlFor="provider-prompt">Message<textarea id="provider-prompt" value={prompt} maxLength={4000} onChange={e=>setPrompt(e.target.value)}/></label><button disabled={busy||!prompt.trim()} onClick={()=>void submit()}>{busy?"Testing…":"Test reply"}</button><p className="preserve" role="status">{result}</p></section>;}

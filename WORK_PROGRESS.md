@@ -7,3 +7,5 @@ Completed: Next.js 16.3.8, React 19, TypeScript, hashable frozen pnpm lockfile; 
 Current validation: 31 unit tests pass; all business/data utilities report 100% statement, branch, function and line coverage. TypeScript, ESLint and production build pass. No browser or production certification is claimed.
 
 Outstanding: browser integration/accessibility tests, paginated media/logs with filters/previews, provider sandbox, complete typed Core response contracts, strict coordinated CI and final performance/deployment certification. Vercel access and Discord OAuth credentials/callback registration remain external gates.
+
+Coordinated rebuild checkpoint: generated all management response types and form constraints from Core, corrected activation enum, isolated saved-provider sandbox, record pagination/filtering/private signed previews, per-game form ownership and router refresh after mutations. Unit tests, lint, typecheck and production build pass for the current source. Prior browser results belong to lost local source and are not certification of this commit. New browser fixtures/tests and immutable Core-pinned CI remain pending.

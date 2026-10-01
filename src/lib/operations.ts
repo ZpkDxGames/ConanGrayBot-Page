@@ -5,6 +5,7 @@ export function operationPath(parts:string[],guild:string,method:string):string|
   if(method==="GET"&&["diagnostics","compatibility"].includes(operation))return `/api/v1/${operation}`;
   if(method==="GET"&&["status","channels","commands"].includes(operation))return operation==="status"?`/api/v1/admin/${guild}/status`:`/api/v1/discord/${guild}/${operation}`;
   if(method==="POST"&&operation==="sync-commands")return `/api/v1/discord/${guild}/sync-commands`;
+  if(method==="POST"&&operation==="test-reply")return `/api/v1/ai/${guild}/test-reply`;
   if(method==="POST"&&operation==="test-drive")return `/api/v1/media/${guild}/test-drive`;
   if(method==="POST"&&operation==="memory/clear")return `/api/v1/admin/${guild}/memory/clear`;
   if(method==="POST"&&/^bot\/(start|restart|shutdown)$/.test(operation))return `/api/v1/admin/${guild}/${operation}`;
