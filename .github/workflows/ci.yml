@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           repository: ZpkDxGames/ConanGrayBot-Core
-          ref: 681083afb3b0f5161ac3ef7189a5d9dc76397948
+          ref: 927b6132cb1a0870668f2d2bf7df5962c7b7d8d2
           path: core
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa
         with:
