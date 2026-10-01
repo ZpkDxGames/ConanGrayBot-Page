@@ -1,0 +1,67 @@
+name: Page quality
+on:
+  push:
+    branches: [main, revamp/v2]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@dcedce43c6f43de0b836d1fe38946645c9c638dc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_COMMENTS: "false"
+          GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "false"
+          GITLEAKS_ENABLE_SUMMARY: "false"
+          GITLEAKS_VERSION: "8.24.3"
+      - name: Scan all reachable history with confidential output redacted
+        run: gitleaks detect --redact --no-banner --log-opts=--all
+  quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: page
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          path: page
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          repository: ZpkDxGames/ConanGrayBot-Core
+          ref: c4f97f0445a8a79a690603b7f4a83b7c7c7ed80a
+          path: core
+      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa
+        with:
+          package_json_file: page/package.json
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+          cache: pnpm
+          cache-dependency-path: page/pnpm-lock.yaml
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m venv ../.venv
+          ../.venv/bin/python -m pip install -r ../core/requirements.txt
+          ../.venv/bin/python -m pip install -r ../core/requirements-dev.txt
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm generate && git diff --exit-code -- src/lib/generated.ts src/lib/field-rules.json
+      - run: cmp contracts/openapi.json ../core/contracts/openapi.json && cmp contracts/defaults.json ../core/contracts/defaults.json
+      - run: pnpm lint && pnpm typecheck && pnpm test
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - run: pnpm audit --prod
+      - run: node scripts/check-bundle.mjs
+      - run: python scripts/build_source.py && python ../core/scripts/scan_artifact.py dist/ConanGrayBot-Page-v2.0.0-source.zip
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: page-source
+          path: page/dist/*
+          if-no-files-found: error

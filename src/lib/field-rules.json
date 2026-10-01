@@ -1,0 +1,691 @@
+{
+  "admin.deniedMessage": {
+    "maxLength": 32000
+  },
+  "admin.memoryClearedMessage": {
+    "maxLength": 32000
+  },
+  "admin.restartMessage": {
+    "maxLength": 32000
+  },
+  "admin.roleId": {
+    "maxLength": 32000
+  },
+  "admin.shutdownMessage": {
+    "maxLength": 32000
+  },
+  "ai.affectionStyle": {
+    "maxLength": 32000
+  },
+  "ai.channelCooldownSeconds": {
+    "minimum": 0,
+    "maximum": 3600
+  },
+  "ai.channelId": {
+    "maxLength": 32000
+  },
+  "ai.comfortStyle": {
+    "maxLength": 32000
+  },
+  "ai.dramaticFlair": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.emojiStyle": {
+    "maxLength": 32000
+  },
+  "ai.emotionalOpenness": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.emptyMessagePrompt": {
+    "maxLength": 32000
+  },
+  "ai.humorLevel": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.initiativeLevel": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.lowEnergyStyle": {
+    "maxLength": 32000
+  },
+  "ai.markdownStyle": {
+    "maxLength": 32000
+  },
+  "ai.maxDiscordMessageLength": {
+    "minimum": 100,
+    "maximum": 2000
+  },
+  "ai.maxHistoryMessages": {
+    "minimum": 4,
+    "maximum": 100
+  },
+  "ai.maxOutputTokens": {
+    "minimum": 32,
+    "maximum": 4096
+  },
+  "ai.maxPromptCharacters": {
+    "minimum": 1000,
+    "maximum": 100000
+  },
+  "ai.maxReplyCharacters": {
+    "minimum": 32,
+    "maximum": 2000
+  },
+  "ai.memoryRetentionDays": {
+    "minimum": 1,
+    "maximum": 365
+  },
+  "ai.messageTemplate": {
+    "maxLength": 32000
+  },
+  "ai.mirroringLevel": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.models.gemini": {
+    "maxLength": 32000
+  },
+  "ai.models.groq": {
+    "maxLength": 32000
+  },
+  "ai.models.openrouter": {
+    "maxLength": 32000
+  },
+  "ai.naturalnessLevel": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.personaPreset": {
+    "maxLength": 32000
+  },
+  "ai.personality": {
+    "maxLength": 32000
+  },
+  "ai.questionFrequency": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.replyMode": {
+    "enum": [
+      "mention_or_reply",
+      "channel",
+      "all"
+    ]
+  },
+  "ai.replyStyle": {
+    "maxLength": 32000
+  },
+  "ai.resetKeyword": {
+    "maxLength": 32000
+  },
+  "ai.responseLength": {
+    "maxLength": 32000
+  },
+  "ai.sarcasmLevel": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.slangLevel": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.spontaneousChancePercent": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.spontaneousPrompt": {
+    "maxLength": 32000
+  },
+  "ai.structureInstructions": {
+    "maxLength": 32000
+  },
+  "ai.styleExamples.casual": {
+    "maxLength": 32000
+  },
+  "ai.styleExamples.comfort": {
+    "maxLength": 32000
+  },
+  "ai.styleExamples.lowEnergy": {
+    "maxLength": 32000
+  },
+  "ai.styleExamples.teasing": {
+    "maxLength": 32000
+  },
+  "ai.styleExamples.unknown": {
+    "maxLength": 32000
+  },
+  "ai.talkinActivationMode": {
+    "enum": [
+      "direct_calls",
+      "direct_calls_and_questions",
+      "all_messages"
+    ]
+  },
+  "ai.teasingLevel": {
+    "minimum": 0,
+    "maximum": 100
+  },
+  "ai.temperature": {
+    "minimum": 0,
+    "maximum": 2
+  },
+  "ai.toneStyle": {
+    "maxLength": 32000
+  },
+  "ai.unknownStyle": {
+    "maxLength": 32000
+  },
+  "appearance.accentColor": {
+    "maxLength": 32000
+  },
+  "appearance.dashboardTheme": {
+    "maxLength": 32000
+  },
+  "appearance.embedFooter": {
+    "maxLength": 32000
+  },
+  "appearance.embedThumbnailUrl": {
+    "maxLength": 32000
+  },
+  "appearance.embedTitle": {
+    "maxLength": 32000
+  },
+  "games.allowedCategoryId": {
+    "maxLength": 32000
+  },
+  "games.coinflipHeadsLabel": {
+    "maxLength": 32000
+  },
+  "games.coinflipMessage": {
+    "maxLength": 32000
+  },
+  "games.coinflipTailsLabel": {
+    "maxLength": 32000
+  },
+  "games.guessSongJudgeTimeoutSeconds": {
+    "minimum": 1,
+    "maximum": 30
+  },
+  "games.guessSongMaxAttempts": {
+    "minimum": 1,
+    "maximum": 30
+  },
+  "games.guessSongPrompt": {
+    "maxLength": 32000
+  },
+  "games.guessSongRoundTimeoutMinutes": {
+    "minimum": 1,
+    "maximum": 60
+  },
+  "games.rpsDrawMessage": {
+    "maxLength": 32000
+  },
+  "games.rpsLoseMessage": {
+    "maxLength": 32000
+  },
+  "games.rpsWinMessage": {
+    "maxLength": 32000
+  },
+  "games.ticTacToeDrawMessage": {
+    "maxLength": 32000
+  },
+  "games.ticTacToeWinMessage": {
+    "maxLength": 32000
+  },
+  "media.channelId": {
+    "maxLength": 32000
+  },
+  "media.failureMessageTemplate": {
+    "maxLength": 32000
+  },
+  "media.fileNameTemplate": {
+    "maxLength": 32000
+  },
+  "media.googleDriveFolderId": {
+    "maxLength": 32000
+  },
+  "media.maxFileSizeMb": {
+    "minimum": 1,
+    "maximum": 256
+  },
+  "media.randomCommandListLimit": {
+    "minimum": 1,
+    "maximum": 1000
+  },
+  "media.randomCommandMaxFileSizeMb": {
+    "minimum": 1,
+    "maximum": 256
+  },
+  "media.successMessageTemplate": {
+    "maxLength": 32000
+  },
+  "media.videoAltTextTemplate": {
+    "maxLength": 32000
+  },
+  "media.videoDisplayMode": {
+    "enum": [
+      "embed_attachment",
+      "secure_stream",
+      "drive_link"
+    ]
+  },
+  "media.videoFallbackMode": {
+    "enum": [
+      "embed_attachment",
+      "secure_stream",
+      "drive_link"
+    ]
+  },
+  "messageTemplates.admin.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.admin.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.admin.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.admin.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.admin.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.admin.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.ai.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.ai.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.ai.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.ai.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.ai.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.ai.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.command.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.command.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.command.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.command.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.command.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.command.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.error.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.error.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.error.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.error.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.error.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.error.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_coinflip.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_coinflip.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_coinflip.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_coinflip.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_coinflip.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_coinflip.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_eightball.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_eightball.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_eightball.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_eightball.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_eightball.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_eightball.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_guesssong.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_guesssong.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_guesssong.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_guesssong.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_guesssong.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_guesssong.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_rps.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_rps.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_rps.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_rps.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_rps.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_rps.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_tictactoe.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_tictactoe.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_tictactoe.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_tictactoe.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_tictactoe.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_tictactoe.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_wouldyourather.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_wouldyourather.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_wouldyourather.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_wouldyourather.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_wouldyourather.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.game_wouldyourather.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.global.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.global.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.global.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.global.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.global.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.global.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.info.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.info.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.info.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.info.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.info.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.info.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.media.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.media.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.media.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.media.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.media.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.media.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.success.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.success.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.success.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.success.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.success.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.success.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.trigger.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.trigger.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.trigger.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.trigger.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.trigger.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.trigger.titleTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.warning.authorTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.warning.color": {
+    "maxLength": 32000
+  },
+  "messageTemplates.warning.descriptionTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.warning.footerTemplate": {
+    "maxLength": 32000
+  },
+  "messageTemplates.warning.thumbnailUrl": {
+    "maxLength": 32000
+  },
+  "messageTemplates.warning.titleTemplate": {
+    "maxLength": 32000
+  },
+  "presence.activityText": {
+    "maxLength": 32000
+  },
+  "presence.activityType": {
+    "enum": [
+      "playing",
+      "listening",
+      "watching",
+      "streaming",
+      "competing",
+      "custom"
+    ]
+  },
+  "presence.entries.*.activityText": {
+    "maxLength": 32000
+  },
+  "presence.entries.*.activityType": {
+    "enum": [
+      "playing",
+      "listening",
+      "watching",
+      "streaming",
+      "competing",
+      "custom"
+    ]
+  },
+  "presence.entries.*.status": {
+    "enum": [
+      "online",
+      "idle",
+      "dnd",
+      "invisible"
+    ]
+  },
+  "presence.entries.*.streamUrl": {
+    "maxLength": 32000
+  },
+  "presence.entries": {
+    "arrayObjects": true
+  },
+  "presence.intervalSeconds": {
+    "minimum": 15,
+    "maximum": 86400
+  },
+  "presence.status": {
+    "enum": [
+      "online",
+      "idle",
+      "dnd",
+      "invisible"
+    ]
+  },
+  "presence.streamUrl": {
+    "maxLength": 32000
+  },
+  "presentation.actionNarrationPrompt": {
+    "maxLength": 32000
+  },
+  "presentation.narrationMaxTokens": {
+    "minimum": 32,
+    "maximum": 1024
+  },
+  "presentation.narrationTimeoutSeconds": {
+    "minimum": 1,
+    "maximum": 30
+  },
+  "revision": {
+    "minimum": 0
+  },
+  "triggers.*.id": {
+    "minLength": 1,
+    "maxLength": 100
+  },
+  "triggers.*.mediaUrl": {
+    "maxLength": 2000
+  },
+  "triggers.*.responseText": {
+    "maxLength": 4000
+  },
+  "triggers.*.word": {
+    "maxLength": 1000
+  },
+  "triggers": {
+    "arrayObjects": true
+  },
+  "weather.defaultLocation": {
+    "maxLength": 32000
+  },
+  "weather.forecastHours": {
+    "minimum": 1,
+    "maximum": 120
+  },
+  "weather.language": {
+    "maxLength": 32000
+  },
+  "weather.units": {
+    "enum": [
+      "auto",
+      "metric",
+      "imperial"
+    ]
+  }
+}

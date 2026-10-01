@@ -1,0 +1,3 @@
+"use client";
+import { useEffect,useRef } from "react";
+export function Confirmation({title,onConfirm,onCancel}:{title:string;onConfirm:()=>void;onCancel:()=>void}){const ref=useRef<HTMLDialogElement>(null);useEffect(()=>{const before=document.activeElement as HTMLElement|null;ref.current?.showModal();return()=>{before?.focus();};},[]);return <dialog ref={ref} onCancel={e=>{e.preventDefault();onCancel();}} aria-labelledby="confirmation-title"><h2 id="confirmation-title">{title}</h2><p>This action affects the configured server. Continue?</p><div className="row"><button autoFocus onClick={onCancel}>Cancel</button><button className="danger" onClick={onConfirm}>Confirm</button></div></dialog>;}

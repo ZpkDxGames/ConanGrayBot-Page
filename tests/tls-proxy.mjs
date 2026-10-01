@@ -1,0 +1,3 @@
+import https from 'node:https';import http from 'node:http';import { readFileSync } from 'node:fs';
+const tls={key:readFileSync('../private/e2e-tls/key.pem'),cert:readFileSync('../private/e2e-tls/cert.pem')};
+for(const [listen,target] of [[3000,4000],[8000,8001]])https.createServer(tls,(request,response)=>{const upstream=http.request({hostname:'127.0.0.1',port:target,path:request.url,method:request.method,headers:request.headers},reply=>{response.writeHead(reply.statusCode,reply.headers);reply.pipe(response);});upstream.on('error',()=>{response.writeHead(502);response.end();});request.pipe(upstream);}).listen(listen);
