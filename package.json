@@ -14,7 +14,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run --coverage",
-    "test:e2e": "playwright test",
+    "test:e2e": "node scripts/prepare-test-tls.mjs && playwright test",
     "generate": "openapi-typescript contracts/openapi.json -o src/lib/generated.ts && node scripts/generate-rules.mjs"
   },
   "dependencies": {
