@@ -2511,7 +2511,7 @@ export interface components {
             units: "auto" | "metric" | "imperial";
             /** Userlocations */
             userLocations?: {
-                [key: string]: string;
+                [key: string]: components["schemas"]["SavedWeatherLocation"] | string;
             };
         };
         /** Category */
@@ -2832,6 +2832,21 @@ export interface components {
             latencyMs: number;
             /** Provider */
             provider: string;
+        };
+        /** SavedWeatherLocation */
+        SavedWeatherLocation: {
+            /**
+             * Country
+             * @default
+             */
+            country: string;
+            /**
+             * Label
+             * @default
+             */
+            label: string;
+            /** Query */
+            query: string;
         };
         /** Trigger */
         Trigger: {
