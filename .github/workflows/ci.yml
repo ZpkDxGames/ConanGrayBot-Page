@@ -33,7 +33,7 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           repository: ZpkDxGames/ConanGrayBot-Core
-          ref: 84cda52688a95daa3f2cf696709bf363116fb43e
+          ref: 9f55aa9d655948620f231c60cd8f497f45a74825
           path: core
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa
         with:
@@ -59,3 +59,9 @@ jobs:
       - run: pnpm test:e2e
       - run: pnpm audit --prod
       - run: node scripts/check-bundle.mjs
+      - run: python scripts/build_source.py && python ../core/scripts/scan_artifact.py dist/ConanGrayBot-Page-v2.0.0-source.zip
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: page-source
+          path: page/dist/*
+          if-no-files-found: error

@@ -7,3 +7,7 @@
 - Generate config types from the coordinated Core contract and add tested business/data utilities.
 
 No stable release is published until coordinated source, CI, security and runtime certification pass.
+
+- Synchronize structured saved-weather responses and generated form constraints with Core.
+- Verify HTTPS production-mode staff checks, CSP, accessibility, CAS conflicts, command publication, provider sandbox and pagination.
+- Add deterministic public source artifacts with provenance manifests and checksums.
